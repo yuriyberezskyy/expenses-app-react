@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeExpense } from '../actions/expenses';
+import { NavLink } from 'react-router-dom';
 
-function ExpensesItem({ dispatch, id, description, amount, createdAt }) {
+function ExpensesItem({ id, description, amount, createdAt }) {
   return (
     <div>
       <ul>
@@ -10,13 +11,7 @@ function ExpensesItem({ dispatch, id, description, amount, createdAt }) {
         <li>{amount}$</li>
         <li>{createdAt}</li>
       </ul>
-      <button
-        onClick={e => {
-          dispatch(removeExpense({ id }));
-        }}
-      >
-        Delete
-      </button>
+      <NavLink to={`/edit/${id}`}>Edit</NavLink>
     </div>
   );
 }
