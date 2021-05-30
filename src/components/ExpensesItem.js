@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { removeExpense } from '../actions/expenses';
 import { NavLink } from 'react-router-dom';
 
 function ExpensesItem({ id, description, amount, createdAt }) {
